@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alpha Web – Trusted Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  padding:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6fb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.container{
+  background:#ffffff;
+  width:90%;
+  max-width:520px;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.12);
+  text-align:center;
+}
+
+.logo-box{
+  margin-bottom:15px;
+}
+
+h1{
+  color:#0b5ed7;
+  margin-bottom:20px;
+}
+
+.search-box{
+  display:flex;
+}
+
+.search-box input{
+  flex:1;
+  padding:12px;
+  font-size:16px;
+  border:2px solid #0b5ed7;
+  border-radius:8px 0 0 8px;
+  outline:none;
+}
+
+.search-box button{
+  padding:12px 22px;
+  border:none;
+  background:#0b5ed7;
+  color:#fff;
+  font-size:16px;
+  border-radius:0 8px 8px 0;
+  cursor:pointer;
+}
+
+.search-box button:hover{
+  background:#084298;
+}
+
+.note{
+  margin-top:15px;
+  font-size:13px;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- EMBEDDED LOGO -->
+  <div class="logo-box">
+    <svg width="120" height="120" viewBox="0 0 120 120">
+      <rect x="10" y="15" width="100" height="70" rx="8" fill="#0b5ed7"/>
+      <rect x="20" y="25" width="80" height="40" rx="4" fill="#ffffff"/>
+      <circle cx="28" cy="33" r="3" fill="#0b5ed7"/>
+      <circle cx="38" cy="33" r="3" fill="#0b5ed7"/>
+      <circle cx="48" cy="33" r="3" fill="#0b5ed7"/>
+      <rect x="55" y="85" width="10" height="15" fill="#0b5ed7"/>
+      <rect x="35" y="100" width="50" height="8" rx="4" fill="#0b5ed7"/>
+    </svg>
+  </div>
+
+  <h1>@Alpha Web</h1>
+
+  <!-- SEARCH BOX -->
+  <div class="search-box">
+    <input type="text" id="query" placeholder="Search education, jobs, govt services...">
+    <button onclick="search()">Search</button>
+  </div>
+
+  <div class="note">
+    Safe • Education • Government Services Only
+  </div>
+
+</div>
+
+<script>
+function search(){
+  let q = document.getElementById("query").value.trim();
+  if(q === ""){
+    alert("Please enter something to search");
+    return;
+  }
+  window.open("https://www.google.com/search?q=" + encodeURIComponent(q), "_blank");
+}
+</script>
+
+</body>
+</html>
